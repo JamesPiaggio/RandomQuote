@@ -14,41 +14,37 @@ project 1 - A Random Quote Generator
 var quotes = [
   {
     quote: "Life is what happens when you're busy making other plans.",
-    source: "John Lennon",
-    citation: "",
-    year: ""
+    source: "John Lennon"
   },
   {
-    quote: "Tell me and I forget. Teach me and I remember. Involve me and I learn.",
-    source: "Benjamin Franklin",
-    citation: "",
-    year: ""
+    quote: "You gonna eat your tots?",
+    source: "Napoleon Dynamite",
+    citation: "Napoleon Dynamite",
+    year: 2004
   },
   {
     quote: "Many of life's failures are people who did not realize how close they were to success when they gave up.",
-    source: "Thomas A. Edison",
-    citation: "",
-    year: ""
+    source: "Thomas A. Edison"
   },
   {
     quote: "Go confidently in the direction of your dreams! Live the life you've imagined.",
-    source: "Henry David Thoreau",
-    citation: "",
-    year: ""
-  }];
-
-//Get quote function
-function getQuote() {
-  var randomNum = Math.floor(Math.random() * quotes.length) + 1; //Random number generator
-  return quotes[randomNum];  //Grabs quote from random array position
-}
-
-getQuote();
+    source: "Henry David Thoreau"
+  },
+  {
+    quote: "You miss 100% of the shot you don't take. -Wayne Gretzky",
+    source: "Michael Scott",
+    citation: "The Office Season 5, Episode 23: 'Michael Scott Paper Company'",
+    year: 2009
+  }
+];
 
 /***
  * `getRandomQuote` function
 ***/
-
+function getRandomQuote () {
+  var randomNum = Math.floor(Math.random() * quotes.length) + 1; //Random number generator
+  return quotes[randomNum];  //Grabs quote from random array position    
+}
 
 /***
  * `printQuote` function
