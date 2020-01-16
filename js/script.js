@@ -30,7 +30,7 @@ var quotes = [
     category: "Music",
     quote: "Then, as it was, then again it will be <br> And though the course may change sometimes <br> Rivers always reach the sea",
     source: "Led Zepplin",
-    citation: "Physical Graffiti",
+    citation: "Ten Years Gone",
     year: 1975
   },
   {
@@ -47,7 +47,7 @@ function getRandomQuote () {
     //Random number generator
     var randomNum = Math.floor(Math.random() * quotes.length);
     //Grabs quote from random array position
-    return quotes[randomNum];  
+    return quotes[randomNum];
 }
 
 //printQuote Function
