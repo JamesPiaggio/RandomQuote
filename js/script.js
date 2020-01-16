@@ -43,7 +43,7 @@ var quotes = [
 ***/
 function getRandomQuote () {
     //Random number generator
-    var randomNum = Math.floor(Math.random() * quotes.length) + 1;
+    var randomNum = Math.floor(Math.random() * quotes.length);
     //Grabs quote from random array position
     return quotes[randomNum];  
 }
@@ -72,7 +72,16 @@ function printQuote () {
     }  
 }
 
-setInterval(printQuote, 5000);
+//changeBackground function
+function changeBackground () {
+    var colors = ["red", "blue", "gray", "orange", "pink"];
+    var colorRandom = Math.floor(Math.random() * colors.length);
+    document.body.style.backgroundColor = colors[colorRandom];
+    
+}
+
+setInterval(changeBackground, 7000);
+setInterval(printQuote, 7000);
 
 
 /***
