@@ -13,24 +13,31 @@ project 1 - A Random Quote Generator
 // Quotes
 var quotes = [
   {
+    category: "Life",
     quote: "Life is what happens when you're busy making other plans.",
     source: "John Lennon",
   },
   {
+    category: "Movie",
     quote: "You gonna eat your tots?",
     source: "Napoleon Dynamite",
     citation: "Napoleon Dynamite",
     year: 2004
   },
   {
+    category: "Life",
     quote: "Many of life's failures are people who did not realize how close they were to success when they gave up.",
     source: "Thomas A. Edison", 
   },
   {
-    quote: "Go confidently in the direction of your dreams! Live the life you've imagined.",
-    source: "Henry David Thoreau",
+    category: "Music",
+    quote: "Then, as it was, then again it will be <br> And though the course may change sometimes <br> Rivers always reach the sea",
+    source: "Led Zepplin",
+    citation: "Physical Graffiti",
+    year: 1975
   },
   {
+    category: "Television",
     quote: "You miss 100% of the shot you don't take. -Wayne Gretzky",
     source: "Michael Scott",
     citation: "The Office Season 5, Episode 23: 'Michael Scott Paper Company'",
@@ -58,30 +65,30 @@ function printQuote () {
     var quoteDiv = document.getElementById("quote-box");
     //Removes existing HTML
     quoteDiv.innerHTML = "";
-    //Adds quote
-    quoteDiv.innerHTML = "<p class='quote'>" + randomQuote.quote + "</p>";
+    //Adds category and quote
+    quoteDiv.innerHTML = "<h2>" + randomQuote.category + "</h2><p class='quote'>" + randomQuote.quote + "</p>";
     //If statements to add source, citation, and year
     if (randomQuote.citation && randomQuote.year) {
         quoteDiv.innerHTML += "<p class='source'>" + randomQuote.source + "<span class='citation'>" + randomQuote.citation + "</span><span class='year'>" + randomQuote.year + "</span></p>";
     } else if (randomQuote.citation) {
-        quoteDiv.innerHTML += "<span class='citation'>" + randomQuote.citation + "</span>";
+        quoteDiv.innerHTML += "<p class='source'>" + randomQuote.source + "<span class='citation'>" + randomQuote.citation + "</span>";
     } else if (randomQuote.year) {
-        quoteDiv.innerHTML += "<span class='year'>" + randomQuote.year + "</span>";
+        quoteDiv.innerHTML += "<p class='source'>" + randomQuote.source + "<span class='year'>" + randomQuote.year + "</span>";
     } else {
         quoteDiv.innerHTML += "<p class='source'>" + randomQuote.source + "</p>"
     }  
+    changeBackground();
 }
 
 //changeBackground function
 function changeBackground () {
-    var colors = ["red", "blue", "gray", "orange", "pink"];
+    var colors = ["red", "blue", "gray", "orange", "pink", "rgb(58, 193, 98)"];
     var colorRandom = Math.floor(Math.random() * colors.length);
     document.body.style.backgroundColor = colors[colorRandom];
     
 }
 
-setInterval(changeBackground, 7000);
-setInterval(printQuote, 7000);
+setInterval(printQuote, 9000);
 
 
 /***
