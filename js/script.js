@@ -14,7 +14,7 @@ project 1 - A Random Quote Generator
 var quotes = [
   {
     quote: "Life is what happens when you're busy making other plans.",
-    source: "John Lennon"
+    source: "John Lennon",
   },
   {
     quote: "You gonna eat your tots?",
@@ -24,11 +24,11 @@ var quotes = [
   },
   {
     quote: "Many of life's failures are people who did not realize how close they were to success when they gave up.",
-    source: "Thomas A. Edison"
+    source: "Thomas A. Edison", 
   },
   {
     quote: "Go confidently in the direction of your dreams! Live the life you've imagined.",
-    source: "Henry David Thoreau"
+    source: "Henry David Thoreau",
   },
   {
     quote: "You miss 100% of the shot you don't take. -Wayne Gretzky",
@@ -42,14 +42,37 @@ var quotes = [
  * `getRandomQuote` function
 ***/
 function getRandomQuote () {
-  var randomNum = Math.floor(Math.random() * quotes.length) + 1; //Random number generator
-  return quotes[randomNum];  //Grabs quote from random array position    
+    //Random number generator
+    var randomNum = Math.floor(Math.random() * quotes.length) + 1;
+    //Grabs quote from random array position
+    return quotes[randomNum];  
 }
 
 /***
  * `printQuote` function
 ***/
+function printQuote () {
+    //Stores random quote object
+    var randomQuote = getRandomQuote();
+    //Stores HTML from webpage
+    var quoteDiv = document.getElementById("quote-box");
+    //Removes existing HTML
+    quoteDiv.innerHTML = "";
+    //Adds quote
+    quoteDiv.innerHTML = "<p class='quote'>" + randomQuote.quote + "</p>";
+    //If statements to add source, citation, and year
+    if (randomQuote.citation && randomQuote.year) {
+        quoteDiv.innerHTML += "<p class='source'>" + randomQuote.source + "<span class='citation'>" + randomQuote.citation + "</span><span class='year'>" + randomQuote.year + "</span></p>";
+    } else if (randomQuote.citation) {
+        quoteDiv.innerHTML += "<span class='citation'>" + randomQuote.citation + "</span>";
+    } else if (randomQuote.year) {
+        quoteDiv.innerHTML += "<span class='year'>" + randomQuote.year + "</span>";
+    } else {
+        quoteDiv.innerHTML += "<p class='source'>" + randomQuote.source + "</p>"
+    }  
+}
 
+setInterval(printQuote, 5000);
 
 
 /***
