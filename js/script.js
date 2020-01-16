@@ -71,6 +71,8 @@ function printQuote () {
         quoteDiv.innerHTML += "<p class='source'>" + randomQuote.source + "</p>"
     }  
     changeBackground();
+    stopInterval();
+    startInterval();
 }
 
 //changeBackground function
@@ -81,8 +83,15 @@ function changeBackground () {
     
 }
 
-setInterval(printQuote, 9000);
+var quoteInterval = setInterval(printQuote, 9000);
 
+function startInterval () {
+    quoteInterval = setInterval(printQuote, 9000);
+}
+
+function stopInterval () {
+    quoteInterval = clearInterval(quoteInterval);
+}
 
 /***
  * click event listener for the print quote button
