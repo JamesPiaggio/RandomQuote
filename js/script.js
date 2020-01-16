@@ -7,9 +7,6 @@ project 1 - A Random Quote Generator
   // Check the "Project Resources" section of the project instructions
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
-/*** 
- * `quotes` array 
-***/
 // Quotes
 var quotes = [
   {
@@ -45,9 +42,7 @@ var quotes = [
   }
 ];
 
-/***
- * `getRandomQuote` function
-***/
+//getRandomQuote function
 function getRandomQuote () {
     //Random number generator
     var randomNum = Math.floor(Math.random() * quotes.length);
@@ -55,9 +50,7 @@ function getRandomQuote () {
     return quotes[randomNum];  
 }
 
-/***
- * `printQuote` function
-***/
+//printQuote Function
 function printQuote () {
     //Stores random quote object
     var randomQuote = getRandomQuote();
