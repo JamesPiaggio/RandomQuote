@@ -57,18 +57,18 @@ const printQuote = () => {
     //Stores HTML from webpage
     const quoteDiv = document.getElementById("quote-box");
     //Removes existing HTML
-    quoteDiv.innerHTML = "";
+    quoteDiv.innerHTML = ``;
     //Adds category and quote
-    quoteDiv.innerHTML = "<h2>" + randomQuote.category + "</h2><p class='quote'>" + randomQuote.quote + "</p>";
+    quoteDiv.innerHTML = `<h2>${randomQuote.category}</h2><p class='quote'>${randomQuote.quote}</p>`;
     //If statements to add source, citation, and year
     if (randomQuote.citation && randomQuote.year) {
-        quoteDiv.innerHTML += "<p class='source'>" + randomQuote.source + "<span class='citation'>" + randomQuote.citation + "</span><span class='year'>" + randomQuote.year + "</span></p>";
+        quoteDiv.innerHTML += `<p class='source'>${randomQuote.source}<span class='citation'>${randomQuote.citation}</span><span class='year'>${randomQuote.year}</span></p>`;
     } else if (randomQuote.citation) {
-        quoteDiv.innerHTML += "<p class='source'>" + randomQuote.source + "<span class='citation'>" + randomQuote.citation + "</span>";
+        quoteDiv.innerHTML += `<p class='source'>${randomQuote.source}<span class='citation'>${randomQuote.citation}</span>`;
     } else if (randomQuote.year) {
-        quoteDiv.innerHTML += "<p class='source'>" + randomQuote.source + "<span class='year'>" + randomQuote.year + "</span>";
+        quoteDiv.innerHTML += `<p class='source'>${randomQuote.source}<span class='year'>${randomQuote.year}</span>`;
     } else {
-        quoteDiv.innerHTML += "<p class='source'>" + randomQuote.source + "</p>"
+        quoteDiv.innerHTML += `<p class='source'>${randomQuote.source}</p>`;
     }  
     changeBackground();
     stopInterval();
