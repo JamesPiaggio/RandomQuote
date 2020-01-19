@@ -8,7 +8,7 @@ project 1 - A Random Quote Generator
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 // Quotes
-var quotes = [
+const quotes = [
   {
     category: "Life",
     quote: "Life is what happens when you're busy making other plans.",
@@ -43,19 +43,19 @@ var quotes = [
 ];
 
 //getRandomQuote function
-function getRandomQuote () {
+const getRandomQuote = () => {
     //Random number generator
-    var randomNum = Math.floor(Math.random() * quotes.length);
+    const randomNum = Math.floor(Math.random() * quotes.length);
     //Grabs quote from random array position
     return quotes[randomNum];
 }
 
 //printQuote Function
-function printQuote () {
+const printQuote = () => {
     //Stores random quote object
-    var randomQuote = getRandomQuote();
+    const randomQuote = getRandomQuote();
     //Stores HTML from webpage
-    var quoteDiv = document.getElementById("quote-box");
+    const quoteDiv = document.getElementById("quote-box");
     //Removes existing HTML
     quoteDiv.innerHTML = "";
     //Adds category and quote
@@ -76,22 +76,19 @@ function printQuote () {
 }
 
 //changeBackground function
-function changeBackground () {
-    var colors = ["red", "blue", "gray", "orange", "pink", "rgb(58, 193, 98)"];
-    var colorRandom = Math.floor(Math.random() * colors.length);
+const changeBackground = () => {
+    const colors = ["red", "blue", "gray", "orange", "pink", "rgb(58, 193, 98)"];
+    const colorRandom = Math.floor(Math.random() * colors.length);
     document.body.style.backgroundColor = colors[colorRandom];
     
 }
 
-var quoteInterval = setInterval(printQuote, 9000);
+let quoteInterval = setInterval(printQuote, 9000);
 
-function startInterval () {
-    quoteInterval = setInterval(printQuote, 9000);
-}
+const startInterval = () => quoteInterval = setInterval(printQuote, 9000);
 
-function stopInterval () {
-    quoteInterval = clearInterval(quoteInterval);
-}
+
+const stopInterval = () => quoteInterval = clearInterval(quoteInterval);
 
 /***
  * click event listener for the print quote button
