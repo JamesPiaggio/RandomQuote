@@ -1,12 +1,3 @@
-/******************************************
-Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
-******************************************/
-
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
 // Quotes
 const quotes = [
   {
@@ -90,9 +81,5 @@ const startInterval = () => quoteInterval = setInterval(printQuote, 9000);
 
 const stopInterval = () => quoteInterval = clearInterval(quoteInterval);
 
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
-
+// Event Listener
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
