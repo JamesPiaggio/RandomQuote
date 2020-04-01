@@ -1,2 +1,2 @@
-Treehouse TechDegree Project 1
-This is a random quote generator for Treehouse TechDegree Unit 1.
+# Random Quote Generator
+This is made with JavaScript to show a random quote every 9 seconds or when the "Show another quote" is clicked.
