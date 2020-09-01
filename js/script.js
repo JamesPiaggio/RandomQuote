@@ -68,7 +68,7 @@ const printQuote = () => {
 
 //changeBackground function
 const changeBackground = () => {
-    const colors = ["red", "blue", "gray", "orange", "pink", "rgb(58, 193, 98)"];
+    const colors = ["blue", "gray", "orange", "pink", "rgb(58, 193, 98)"];
     const colorRandom = Math.floor(Math.random() * colors.length);
     document.body.style.backgroundColor = colors[colorRandom];
     
